@@ -2,7 +2,6 @@
 
 ## Sumário
 
-- [Sobre o desafio](./CHALLENGE.md)
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
 - [Ferramentas](#ferramentas)
