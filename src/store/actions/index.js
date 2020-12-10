@@ -30,6 +30,16 @@ export const setTransactionsListError = (error) => ({
   error,
 });
 
+export const initTransactions = () => (dispatch, getState) => {
+  if (getState().transactions.length < 1) {
+    const handleFetch = () => {
+      dispatch(fetchTransactionsList());
+    };
+    setInterval(handleFetch, 10000);
+    handleFetch();
+  }
+};
+
 export const fetchTransactionsList = () => async (dispatch) => {
   dispatch(setTransactionsListLoading(true));
   try {

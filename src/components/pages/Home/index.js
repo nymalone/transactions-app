@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
 
-import { fetchTransactionsList } from "../../../store/actions";
+import { initTransactions, fetchTransactionsList } from "../../../store/actions";
 import { formatCurrency } from "../../../utils/formatNumbers";
 import { formatData } from "../../../utils/formatData";
 import { formatDate } from "../../../utils/stringUtils";
@@ -35,6 +35,7 @@ const Home = () => {
   const newTransactionRoute = () => history.push("/new-transaction");
 
   useEffect(() => {
+    dispatch(initTransactions());
     dispatch(fetchTransactionsList());
   }, [dispatch]);
 
